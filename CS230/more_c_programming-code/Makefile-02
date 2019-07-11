@@ -1,0 +1,70 @@
+# Symbolic constants to make it easier to
+# reuse and modify.
+
+CC = gcc
+
+CFLAGS = --std=c99 -Wall -g
+
+# Rules to build executables
+
+simple2: simple2.o
+	$(CC) $(CFLAGS) simple2.o -o simple2
+
+simple3: simple3.o
+	$(CC) $(CFLAGS) simple3.o -o simple3
+
+simple3s: simple3s.o
+	$(CC) $(CFLAGS) simple3s.o -o simple3s
+
+echo: echo.o
+	$(CC) $(CFLAGS) echo.o -o echo
+
+lines: lines.o
+	$(CC) $(CFLAGS) lines.o -o lines
+
+liness: liness.o
+	$(CC) $(CFLAGS) liness.o -o liness
+
+wc: wc.o
+	$(CC) $(CFLAGS) wc.o -o wc
+
+wcs: wcs.o
+	$(CC) $(CFLAGS) wcs.o -o wcs	
+
+arrays: arrays.o
+	$(CC) $(CFLAGS) arrays.o -o arrays
+
+# Rules to compile source to object files
+
+simple2.o: simple2.c
+	$(CC) $(CFLAGS) -c simple2.c
+
+simple3.o: simple3.c
+	$(CC) $(CFLAGS) -c simple3.c
+
+simple3s.o: simple3s.c
+	$(CC) $(CFLAGS) -c simple3s.c
+
+echo.o: echo.c
+	$(CC) $(CFLAGS) -c echo.c
+
+lines.o: lines.c
+	$(CC) $(CFLAGS) -c lines.c
+
+liness.o: liness.c
+	$(CC) $(CFLAGS) -c liness.c
+
+wc.o: wc.c
+	$(CC) $(CFLAGS) -c wc.c
+
+wcs.o: wcs.c
+	$(CC) $(CFLAGS) -c wcs.c
+
+arrays.o: arrays.c
+	$(CC) $(CFLAGS) -c arrays.c	
+
+# Rule to clean the build
+
+clean:
+	rm -f simple2 simple3.o simple3s.o echo.o lines.o liness.o wc.o wcs.o
+	rm -f simple2 simple3 simple3s echo lines liness wc wcs

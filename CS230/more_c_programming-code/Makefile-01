@@ -1,0 +1,22 @@
+# Symbolic constants to make it easier to
+# reuse and modify.
+
+CC = gcc
+
+CFLAGS = --std=c99 -Wall -g
+
+# Rule to build executable
+
+simple2: simple2.o
+	$(CC) $(CFLAGS) simple2.o -o simple2
+
+# Rule to compile source to object file
+
+simple2.o: simple2.c
+	$(CC) $(CFLAGS) -c simple2.c
+
+# Rule to clean the build
+
+clean:
+	rm -f simple2.o
+	rm -f simple2
